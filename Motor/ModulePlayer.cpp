@@ -4,6 +4,7 @@
 
 ModulePlayer::ModulePlayer(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
+
 }
 
 ModulePlayer::~ModulePlayer()
@@ -13,6 +14,9 @@ ModulePlayer::~ModulePlayer()
 bool ModulePlayer::Start()
 {
 	LOG("Loading player");
+
+	PlayerTex = App->textures->Load("pinball/player.png");
+
 	return true;
 }
 
@@ -27,6 +31,7 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
+	App->renderer->Blit(PlayerTex, 100, 500, NULL, 1.0f);
 	return UPDATE_CONTINUE;
 }
 
