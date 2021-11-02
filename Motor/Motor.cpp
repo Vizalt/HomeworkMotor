@@ -5,17 +5,17 @@
 
 // TODO 1: Include Box 2 header and library
 
-ModulePhysics::ModulePhysics(Application* app, bool start_enabled) : Module(app, start_enabled)
+Motor::Motor(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
 	debug = true;
 }
 
 // Destructor
-ModulePhysics::~ModulePhysics()
+Motor::~Motor()
 {
 }
 
-bool ModulePhysics::Start()
+bool Motor::Start()
 {
 	LOG("Creating Physics 2D environment");
 
@@ -30,7 +30,7 @@ bool ModulePhysics::Start()
 }
 
 // 
-update_status ModulePhysics::PreUpdate()
+update_status Motor::PreUpdate()
 {
 	// TODO 3: Update the simulation ("step" the world)
 
@@ -38,7 +38,7 @@ update_status ModulePhysics::PreUpdate()
 }
 
 // 
-update_status ModulePhysics::PostUpdate()
+update_status Motor::PostUpdate()
 {
 	// TODO 5: On space bar press, create a circle on mouse position
 	// - You need to transform the position / radius
@@ -76,7 +76,7 @@ update_status ModulePhysics::PostUpdate()
 
 
 // Called before quitting
-bool ModulePhysics::CleanUp()
+bool Motor::CleanUp()
 {
 	LOG("Destroying physics world");
 

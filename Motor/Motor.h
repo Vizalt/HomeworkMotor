@@ -2,11 +2,11 @@
 #include "Module.h"
 #include "Globals.h"
 
-class ModulePhysics : public Module
+class Motor : public Module
 {
 public:
-	ModulePhysics(Application* app, bool start_enabled = true);
-	~ModulePhysics();
+	Motor(Application* app, bool start_enabled = true);
+	~Motor();
 
 	bool Start();
 	update_status PreUpdate();
