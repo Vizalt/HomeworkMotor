@@ -31,10 +31,26 @@ bool ModuleSceneIntro::CleanUp()
 	return true;
 }
 
+update_status ModuleSceneIntro::PreUpdate()
+{
+
+
+	return UPDATE_CONTINUE;
+}
+
 // Update: draw background
 update_status ModuleSceneIntro::Update()
 {
 	
+	App->renderer->DrawLine(-1000, 500,2000 ,500, 255, 0, 0);
+
+
+	return UPDATE_CONTINUE;
+}
+
+update_status ModuleSceneIntro::PostUpdate()
+{
+
 
 	return UPDATE_CONTINUE;
 }
