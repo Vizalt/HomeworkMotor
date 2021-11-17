@@ -12,6 +12,7 @@
 #include "ModulePlayer.h"
 #include "Motor.h"
 #include "ModuleSceneIntro.h"
+#include "ModulePhysics.h"
 
 class Application
 {
@@ -24,6 +25,7 @@ public:
 	ModulePlayer* player;
 	ModuleSceneIntro* scene_intro;
 	Motor* motor;
+	ModulePhysics* physics;
 
 private:
 
