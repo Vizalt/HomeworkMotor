@@ -4,8 +4,6 @@
 #include "Globals.h"
 #include "p2Point.h"
 
-
-
 class ModulePlayer : public Module
 {
 public:
@@ -18,5 +16,6 @@ public:
 
 	
 public:
+	p2Point<int> position;
 	SDL_Texture* PlayerTex;
 };
