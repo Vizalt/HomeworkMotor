@@ -20,6 +20,7 @@ bool ModuleSceneIntro::Start()
 
 	App->renderer->camera.x = App->renderer->camera.y = 0;
 
+
 	return ret;
 }
 
