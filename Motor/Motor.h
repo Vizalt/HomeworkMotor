@@ -1,7 +1,8 @@
 #pragma once
 #include "Module.h"
 #include "Globals.h"
-
+#include "Animation.h"
+#include "p2Point.h"
 class Motor : public Module
 {
 public:
@@ -30,12 +31,14 @@ public:
 		double mass;
 
 		// Aerodynamics stuff
-		double surface; // Effective wet surface
-		double cl; // Lift coefficient
-		double cd; // Drag coefficient
+		//double surface; // Effective wet surface
+		//double cl; // Lift coefficient
+		//double cd; // Drag coefficient
 
 		// Has physics enabled?
 		bool physics_enabled = true;
+
+		int rad;
 	};
 
 	struct Ground {
@@ -60,8 +63,9 @@ public:
 
 private:
 
-	int dt = 1 / 60;
+	float dt = 1.0f/30;
 
+	SDL_Texture* BALL;
 	bool debug;
 };
 

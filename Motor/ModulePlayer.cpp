@@ -16,7 +16,7 @@ bool ModulePlayer::Start()
 	position.x = 100;
 	position.y = 430;
 	PlayerTex = App->textures->Load("pinball/player.png");
-
+	
 	return true;
 }
 
