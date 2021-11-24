@@ -59,7 +59,8 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void integrator_velocity_verlet(Ball& ball, double dt);
-
+	void integrator_bw_euler(Ball& ball, double dt);
+	void integrator_fw_euler(Ball& ball, double dt);
 
 private:
 

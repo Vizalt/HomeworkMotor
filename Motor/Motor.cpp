@@ -65,7 +65,8 @@ update_status Motor::Update()
 	ball.ay = ball.fy / ball.mass;
 	LOG("VX= %d, VY= %d ", ball.vx, ball.vy);
 	// Step #3: Integrate --> from accel to new velocity & new position. 
-	integrator_velocity_verlet(ball, dt);
+	//integrator_velocity_verlet(ball, dt);
+	integrator_fw_euler(ball,dt);
 
 	// Step #4: solve collisions
 	if (ball.y >= ground.y)
@@ -109,6 +110,27 @@ void Motor::integrator_velocity_verlet(Ball& ball, double dt)
 	ball.y += ball.vy * dt + 0.5 * ball.ay * dt * dt;
 	ball.vx += ball.ax * dt;
 	ball.vy += ball.ay * dt;
+	LOG("VX= %d, VY= %d ", ball.vx, ball.vy);
+}
+
+void Motor::integrator_bw_euler(Ball& ball, double dt)
+{
+	ball.x = ball.x + ball.vx * dt;
+	ball.y = ball.y + ball.vy * dt;
+	ball.vx = ball.vx+ ball.ax * dt;
+	ball.vy = ball.vy + ball.ay * dt;
+	LOG("VX= %d, VY= %d ", ball.vx, ball.vy);
+}
+
+void Motor::integrator_fw_euler(Ball& ball, double dt)
+{
+	
+	ball.vx = ball.vx + ball.ax * dt;
+	ball.vy = ball.vy + ball.ay * dt;
+
+	ball.x = ball.x + ball.vx * dt;
+	ball.y = ball.y + ball.vy * dt;
+
 	LOG("VX= %d, VY= %d ", ball.vx, ball.vy);
 }
 
