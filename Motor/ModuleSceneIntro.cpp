@@ -20,6 +20,7 @@ bool ModuleSceneIntro::Start()
 
 	App->renderer->camera.x = App->renderer->camera.y = 0;
 
+
 	return ret;
 }
 
@@ -42,7 +43,7 @@ update_status ModuleSceneIntro::PreUpdate()
 update_status ModuleSceneIntro::Update()
 {
 	
-	App->renderer->DrawLine(-1000, 500,2000 ,500, 255, 0, 0);
+	App->renderer->DrawLine(-1000, App->motor->ground.y,2000 , App->motor->ground.y, 255, 0, 0);
 
 
 	return UPDATE_CONTINUE;
